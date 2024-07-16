@@ -33,7 +33,7 @@ export default function Home() {
   }
 
   return (
-    <Card className="">
+    <Card className="" style={{ textAlign: "center", margin: "0 auto" }}>
       <Clock handleOnClick={handleCalculateFibonaci}></Clock>;
       <InputClock handleOnClick={handleCalculateFibonaci}></InputClock>
       <ResultModal
@@ -42,7 +42,11 @@ export default function Home() {
         handleVisible={setVisible}
       />
       {context && context?.data?.length > 0 && (
-        <Button label="Historial" onClick={() => setIsHistorial(true)}></Button>
+        <Button
+          label="Historial"
+          onClick={() => setIsHistorial(true)}
+          className="p-5"
+        ></Button>
       )}
       <DataModal
         visible={isHistorial}
