@@ -43,14 +43,17 @@ export default function Home() {
 
   const postData = async (arg1: number, arg2: number, arg3: number) => {
     try {
-      const response = await fetch("http://localhost:5000/fibo/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          // Aquí puedes agregar otros headers según sea necesario
-        },
-        body: JSON.stringify({ arg1, arg2, arg3 }),
-      });
+      const response = await fetch(
+        "https://proteccionbacktest.onrender.com/fibo/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            // Aquí puedes agregar otros headers según sea necesario
+          },
+          body: JSON.stringify({ arg1, arg2, arg3 }),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Error en la solicitud POST");
